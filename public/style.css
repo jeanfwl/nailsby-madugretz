@@ -271,3 +271,110 @@ body {
     font-size: 1.9rem;
   }
 }
+
+/* Dialog Styles */
+.tabela-dialog {
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+  background: transparent;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  overflow: visible;
+}
+
+.tabela-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.tabela-dialog[open] {
+  animation: modalOpen 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.dialog-content {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 0.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 90vh;
+}
+
+.image-wrapper {
+  width: 100%;
+  overflow-y: auto;
+  border-radius: 12px;
+  min-height: 0;
+  flex-shrink: 1;
+}
+
+.image-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.image-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+.image-wrapper::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+.image-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+.tabela-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  background: #fdfdfd;
+}

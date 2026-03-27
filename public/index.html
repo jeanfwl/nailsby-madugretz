@@ -157,7 +157,17 @@
         >
           <span class="link-title">Instagram</span>
         </a>
-
+        <a
+          href="#"
+          class="link-card"
+          title="Ver Tabela de Valores"
+          onclick="
+            document.getElementById('tabela-dialog').showModal();
+            event.preventDefault();
+          "
+        >
+          <span class="link-title">Tabela de Valores</span>
+        </a>
         <a
           href="https://maps.app.goo.gl/TXiKsDygv2EbgcPbA"
           class="link-card"
@@ -179,5 +189,33 @@
         </a> -->
       </main>
     </div>
+
+    <!-- Dialog for Tabela de Valores -->
+    <dialog id="tabela-dialog" class="tabela-dialog" onclick="if (event.target === this) this.close();">
+      <div class="dialog-content">
+        <button
+          class="close-btn"
+          onclick="document.getElementById('tabela-dialog').close()"
+          aria-label="Fechar"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#4a6e96"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="image-wrapper">
+          <img src="./tabela.jpg" alt="Tabela de Valores" class="tabela-img" />
+        </div>
+      </div>
+    </dialog>
   </body>
 </html>
